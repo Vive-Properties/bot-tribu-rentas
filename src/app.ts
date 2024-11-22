@@ -208,7 +208,7 @@ const callFlow = addKeyword(["hablar con un asesor", "agendar una cita"])
   .addAnswer("Gracias, en breve nos comunicaremos contigo");
 
 const welcomeFlow = addKeyword<Provider, Database>("hola tribu")
-  .addAnswer("Bienvenido a Vive Properties en qué puedo ayudarte?")
+  .addAnswer("Bienvenido a Tribu Living en qué puedo ayudarte?")
   .addAction(
     { capture: true },
     async (
