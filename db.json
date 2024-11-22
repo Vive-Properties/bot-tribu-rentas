@@ -1,0 +1,76 @@
+[
+  {
+    "ref": "25e72397-3b1a-48f2-b9e8-d95bfef13b16",
+    "keyword": "76a83a1540c0832ede7f2f5bc4c431e7",
+    "answer": "./src/app.ts",
+    "options": {},
+    "from": "5213338225755",
+    "refSerialize": "9608bbcf6afaa1049018461e4a614fe6"
+  },
+  {
+    "ref": "ans_788bf57b-accb-4964-8cee-897213caf369",
+    "keyword": "key_4e3058f0-5d30-4469-9a9e-4c7db5f99877",
+    "answer": "__call_action__",
+    "options": {
+      "buttons": [],
+      "capture": false,
+      "delay": 0,
+      "nested": [],
+      "keyword": {},
+      "callback": true
+    },
+    "refSerialize": "f6908691855fb4dbce6b40fcea41a81a",
+    "from": "5213338225755"
+  },
+  {
+    "ref": "343655e1-457c-4554-b5b0-813d5c4fde11",
+    "keyword": null,
+    "answer": "Para comenzar una nueva conversación escribe \"Hola Vive Properties\".",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "delay": 0
+    },
+    "from": "5213338225755",
+    "refSerialize": "d57b1ae68c743a1574333239e8734b7b"
+  },
+  {
+    "ref": "e80e02f7-fcac-4f3a-8782-9557b2b510e9",
+    "keyword": "f6908691855fb4dbce6b40fcea41a81a",
+    "answer": "hola vive properties",
+    "options": {},
+    "from": "5213338225755",
+    "refSerialize": "997e6cbffd8485e38d5b317c817779a3"
+  },
+  {
+    "ref": "ans_0d1f4b24-dd2d-4992-982d-386b1d4e1220",
+    "keyword": "key_d4755196-c6a7-4aa1-95b5-7e595b8e6fee",
+    "answer": "Bienvenido a Vive Properties en qué puedo ayudarte?",
+    "options": {
+      "buttons": [],
+      "capture": false,
+      "delay": 0,
+      "nested": [],
+      "keyword": {},
+      "callback": false
+    },
+    "refSerialize": "c0103b6a3e2066b7c64fe0486cb96d8c",
+    "from": "5213338225755"
+  },
+  {
+    "ref": "ans_70dbd5d6-555a-44bf-8de4-14c7bc167bc7",
+    "keyword": "ans_0d1f4b24-dd2d-4992-982d-386b1d4e1220",
+    "answer": "__capture_only_intended__",
+    "options": {
+      "buttons": [],
+      "capture": true,
+      "delay": 0,
+      "nested": [],
+      "keyword": {},
+      "callback": true
+    },
+    "refSerialize": "ed926811ada1ee66e569373b7079ae9f",
+    "from": "5213338225755"
+  }
+]
