@@ -76,7 +76,7 @@ const processUserMessage = async (ctx, { flowDynamic, state, provider }) => {
       const cleanedChunk = chunk.trim().replace(/ [.*?] [ ] /g, "");
       await flowDynamic([{ body: cleanedChunk }]);
     }
-    if (response.includes("Teléfono de Oficina")) {
+    if (response.includes("Teléfono de Oficina") || response.includes("De nada")) {
       isWelcomeFlowCompleted = false; // detienes el flujo
       await flowDynamic([
         {
@@ -140,59 +140,6 @@ const aiFlow = addKeyword<Provider, Database>(EVENTS.WELCOME).addAction(
     }
   }
 );
-const callFlow = addKeyword(["hablar con un asesor", "agendar una cita"])
-  .addAction((state) => {
-    console.log(state);
-  })
-  .addAnswer(
-    `Para que podamos contactarnos contigo necesito que me proporciones algunos datos. Si deseas cancelar y volver al inicio escribe "cancelar"
-        \n¿Cuál es tu nombre?`,
-    { capture: true },
-    async (ctx, { endFlow, state }) => {
-      const userContext = ctx.body.toLowerCase();
-      if (userContext === "cancelar") {
-        isWelcomeFlowCompleted = false;
-        return endFlow(
-          `Has finalizado la conversación, para iniciar una nueva escribe "Hola Tribu"`
-        );
-      }
-      await state.update({ nombre: ctx.body });
-    }
-  )
-  .addAnswer(
-    "¿Cual es tu correo?",
-    { capture: true },
-    async (ctx, { fallBack, endFlow, state }) => {
-      const userContext = ctx.body.toLowerCase();
-      if (userContext === "cancelar") {
-        isWelcomeFlowCompleted = false;
-        return endFlow(
-          `Has finalizado la conversación, para iniciar una nueva escribe "Hola Tribu"`
-        );
-      }
-      if (!ctx.body.includes("@") && !ctx.body.includes(".")) {
-        return fallBack("Por favor ingresa un correo");
-      } else {
-        isWelcomeFlowCompleted = false;
-        await state.update({ correo: ctx.body });
-      }
-    }
-  )
-  .addAction(async (ctx, { state }) => {
-    await state.update({ numero: formatInternationalNumber(ctx.from) });
-
-    const body = JSON.stringify({
-      properties: {
-        email: state.get("correo"),
-        phone: state.get("numero"),
-        firstname: state.get("nombre"),
-      },
-    });
-
-    console.log(body);
-    //   globalData = data.id;
-  })
-  .addAnswer("Gracias, en breve nos comunicaremos contigo");
 
 const welcomeFlow = addKeyword<Provider, Database>("hola tribu")
   .addAnswer("Bienvenido a Tribu Living en qué puedo ayudarte?")
