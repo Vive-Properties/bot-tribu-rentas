@@ -205,7 +205,7 @@ const welcomeFlow = addKeyword<Provider, Database>("hola tribu")
       isWelcomeFlowCompleted = true;
       joinMessages(ctx, async (mensajes) => {
         // await flowDynamic("Respuesta: " + mensajes);
-        console.log(mensajes)
+        console.log(mensajes);
         return gotoFlow(aiFlow);
       });
       return fallBack();
@@ -213,7 +213,7 @@ const welcomeFlow = addKeyword<Provider, Database>("hola tribu")
   );
 
 const main = async () => {
-  const adapterFlow = createFlow([welcomeFlow, aiFlow, callFlow]);
+  const adapterFlow = createFlow([welcomeFlow, aiFlow]);
 
   const adapterProvider = createProvider(Provider);
 
