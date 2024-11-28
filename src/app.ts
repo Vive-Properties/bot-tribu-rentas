@@ -13,7 +13,7 @@ import { BaileysProvider as Provider } from "@builderbot/provider-baileys";
 import { typing } from "./presence";
 import { toAsk, httpInject } from "@builderbot-plugins/openai-assistants";
 
-const PORT = process.env.PORT ?? 8080;
+const PORT = process.env.PORT ?? 3030;
 const ASSISTANT_ID = process.env?.ASSISTANT_ID ?? "";
 let isWelcomeFlowCompleted = false;
 const userQueues = new Map();
@@ -68,7 +68,7 @@ const processUserMessage = async (ctx, { flowDynamic, state, provider }) => {
   await typing(ctx, provider);
 
   if (isWelcomeFlowCompleted) {
-    await delay(3000);
+    // await delay(3000);
     const response = await toAsk(ASSISTANT_ID, ctx.body, state);
     const chunks = response.split(/\n\n+/);
     console.log(typing(ctx, provider));
@@ -76,11 +76,11 @@ const processUserMessage = async (ctx, { flowDynamic, state, provider }) => {
       const cleanedChunk = chunk.trim().replace(/ [.*?] [ ] /g, "");
       await flowDynamic([{ body: cleanedChunk }]);
     }
-    if (response.includes("nombre")) {
+    if (response.includes("Teléfono de Oficina")) {
       isWelcomeFlowCompleted = false; // detienes el flujo
       await flowDynamic([
         {
-          body: `Espera un momento, tomaremos tus datos, si deseas continuar escribe "si"`,
+          body: `Gracias por comunicarse con Tribu, si desea una nueva conversación escriba "Hola Tribu".`,
         },
       ]);
     }
@@ -178,33 +178,20 @@ const callFlow = addKeyword(["hablar con un asesor", "agendar una cita"])
       }
     }
   )
-//   .addAction(async (ctx, { state }) => {
-//     await state.update({ numero: formatInternationalNumber(ctx.from) });
+  .addAction(async (ctx, { state }) => {
+    await state.update({ numero: formatInternationalNumber(ctx.from) });
 
-//     const body = JSON.stringify({
-//       properties: {
-//         email: state.get("correo"),
-//         phone: state.get("numero"),
-//         firstname: state.get("nombre"),
-//       },
-//     });
+    const body = JSON.stringify({
+      properties: {
+        email: state.get("correo"),
+        phone: state.get("numero"),
+        firstname: state.get("nombre"),
+      },
+    });
 
-//     const response = await fetch(
-//       "https://api.hubapi.com/crm/v3/objects/contacts?scope=crm.objects.contacts.write&client_id=d780d669-1629-4ea0-b229-efd74311a5c4&redirect_uri=https://localhost:6392/",
-//       {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//           Authorization: process.env.HUBSPOT_TOKEN,
-//         },
-//         body,
-//       }
-//     );
-
-//     const data = await response.json();
-//     console.log(data.id);
-//     //   globalData = data.id;
-//   })
+    console.log(body);
+    //   globalData = data.id;
+  })
   .addAnswer("Gracias, en breve nos comunicaremos contigo");
 
 const welcomeFlow = addKeyword<Provider, Database>("hola tribu")
@@ -218,6 +205,7 @@ const welcomeFlow = addKeyword<Provider, Database>("hola tribu")
       isWelcomeFlowCompleted = true;
       joinMessages(ctx, async (mensajes) => {
         // await flowDynamic("Respuesta: " + mensajes);
+        console.log(mensajes)
         return gotoFlow(aiFlow);
       });
       return fallBack();
