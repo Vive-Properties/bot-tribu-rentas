@@ -10,7 +10,7 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": false,
-    "outDir": "./dist",
+    "outDir": "./public",
     "baseUrl": "./",
     "rootDir": "./",
     "incremental": true,
