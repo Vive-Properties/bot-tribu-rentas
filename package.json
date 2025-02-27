@@ -8,7 +8,7 @@
     "start": "node ./public/app.js",
     "lint": "eslint . --no-ignore",
     "dev": "npm run lint && nodemon ./src/app.ts",
-    "build": "npx rollup -c && mkdir -p public && mv dist/* public/"
+    "build": "npx rollup -c"
   },
   "keywords": [],
   "dependencies": {
