@@ -1,10 +1,176 @@
 [
   {
-    "ref": "1537218f-5fc6-4301-bdc3-2ca2944249ef",
-    "keyword": "ed926811ada1ee66e569373b7079ae9f",
+    "ref": "34828724-2609-4a8d-a286-df5bc6b8ce37",
+    "keyword": "c22e4066d61d81721def9b25d8a397e8",
     "answer": "Hola",
     "options": {},
     "from": "5213338225755",
     "refSerialize": "c22e4066d61d81721def9b25d8a397e8"
+  },
+  {
+    "ref": "ans_a16a7358-7f75-45fa-b8b5-41555916d9c6",
+    "keyword": "key_bc39f53f-4951-4899-a021-8cbe381506d4",
+    "answer": "__call_action__",
+    "options": {
+      "buttons": [],
+      "capture": false,
+      "delay": 0,
+      "nested": [],
+      "keyword": {},
+      "callback": true
+    },
+    "refSerialize": "72edd79066ec120222c79cadb0fb7369",
+    "from": "5213338225755"
+  },
+  {
+    "ref": "f5c2f2ef-8378-4318-8ad9-17d0893e24c1",
+    "keyword": null,
+    "answer": "Para comenzar una nueva conversación escribe \"Hola Tribu\".",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "delay": 0
+    },
+    "from": "5213338225755",
+    "refSerialize": "6cf7bb5f07ac74f2160356a69d74144a"
+  },
+  {
+    "ref": "75078c89-46cf-47db-b62b-08f49f40bd03",
+    "keyword": "72edd79066ec120222c79cadb0fb7369",
+    "answer": "Hola tribu",
+    "options": {},
+    "from": "5213338225755",
+    "refSerialize": "66065619970334ec3f2c7ace1de0a4ca"
+  },
+  {
+    "ref": "ans_3adb088f-823c-4184-9fec-3a9611c3f726",
+    "keyword": "key_806e9973-3e66-406a-b2c4-8f568d7f1d6b",
+    "answer": "Bienvenido a Tribu Living en qué puedo ayudarte?",
+    "options": {
+      "buttons": [],
+      "capture": false,
+      "delay": 0,
+      "nested": [],
+      "keyword": {},
+      "callback": false
+    },
+    "refSerialize": "7265edaef64589703cc05369b3ef9b3d",
+    "from": "5213338225755"
+  },
+  {
+    "ref": "ans_722a92c7-0c92-4012-a188-c58cc0da1058",
+    "keyword": "ans_3adb088f-823c-4184-9fec-3a9611c3f726",
+    "answer": "__capture_only_intended__",
+    "options": {
+      "buttons": [],
+      "capture": true,
+      "delay": 0,
+      "nested": [],
+      "keyword": {},
+      "callback": true
+    },
+    "refSerialize": "6c25f50310b046c2ff7da3d9cab64380",
+    "from": "5213338225755"
+  },
+  {
+    "ref": "ba0822a8-1bdd-4f5e-b8c5-5f1b61d9ad40",
+    "keyword": "6c25f50310b046c2ff7da3d9cab64380",
+    "answer": "No puedo entrar a mi departamento",
+    "options": {},
+    "from": "5213338225755",
+    "refSerialize": "f67dc1143550fcccc9d4a9b18d5683be"
+  },
+  {
+    "ref": "ans_722a92c7-0c92-4012-a188-c58cc0da1058",
+    "keyword": "ans_3adb088f-823c-4184-9fec-3a9611c3f726",
+    "answer": "__capture_only_intended__",
+    "options": {
+      "buttons": [],
+      "capture": true,
+      "delay": 0,
+      "nested": [],
+      "keyword": {},
+      "callback": true
+    },
+    "refSerialize": "6c25f50310b046c2ff7da3d9cab64380",
+    "from": "5213338225755"
+  },
+  {
+    "ref": "ans_a16a7358-7f75-45fa-b8b5-41555916d9c6",
+    "keyword": "key_bc39f53f-4951-4899-a021-8cbe381506d4",
+    "answer": "__call_action__",
+    "options": {
+      "buttons": [],
+      "capture": false,
+      "delay": 0,
+      "nested": [],
+      "keyword": {},
+      "callback": true
+    },
+    "refSerialize": "72edd79066ec120222c79cadb0fb7369",
+    "from": "5213338225755"
+  },
+  {
+    "ref": "2845d01f-9393-4f2b-8d6b-0b4fc034412a",
+    "keyword": null,
+    "answer": "Lamento que estés teniendo problemas para entrar a tu departamento. ¿Tienes una reservación con nosotros? Si es así, por favor proporciona tu nombre completo, número de reserva o el nombre del lugar donde te hospedarás. Si no tienes una reservación, te invito a que reserves con nosotros a través de plataformas como Airbnb, Expedia, Booking, VRBO o directamente en nuestro sitio web: https://rentals.tribucoliving.com/.",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "delay": 0
+    },
+    "from": "5213338225755",
+    "refSerialize": "5c0922e40dcd69834c14ee9c5999ab83"
+  },
+  {
+    "ref": "d9de8429-4c6f-4918-875b-bf51e13cefff",
+    "keyword": "72edd79066ec120222c79cadb0fb7369",
+    "answer": "Mi nombre es Lilia Salazar y mi reserva es 9474739",
+    "options": {},
+    "from": "5213338225755",
+    "refSerialize": "3e1363fc39da765dffc3e2949de65eb6"
+  },
+  {
+    "ref": "ans_a16a7358-7f75-45fa-b8b5-41555916d9c6",
+    "keyword": "key_bc39f53f-4951-4899-a021-8cbe381506d4",
+    "answer": "__call_action__",
+    "options": {
+      "buttons": [],
+      "capture": false,
+      "delay": 0,
+      "nested": [],
+      "keyword": {},
+      "callback": true
+    },
+    "refSerialize": "72edd79066ec120222c79cadb0fb7369",
+    "from": "5213338225755"
+  },
+  {
+    "ref": "0fb0ab1b-fc7e-4304-9e10-1e2aaca197ce",
+    "keyword": null,
+    "answer": "Gracias, Lilia. Permíteme verificar tu reserva con el número 9474739. Un momento, por favor.",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "delay": 0
+    },
+    "from": "5213338225755",
+    "refSerialize": "2c9b43a686f19b970410cdd59b0ee4df"
+  },
+  {
+    "ref": "d5e6d89a-8b87-4b83-a23d-dd12c0cd6dc7",
+    "keyword": null,
+    "answer": "(Nota: No tengo acceso a sistemas internos para verificar reservas, pero puedes contactar a nuestro servicio al cliente al 3336306289 o por WhatsApp al +52 33 2973 1609 para asistencia inmediata).",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "delay": 0
+    },
+    "from": "5213338225755",
+    "refSerialize": "17382fffbfaa2fbf28deddb57ec8e71c"
   }
 ]

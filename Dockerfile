@@ -1,14 +1,14 @@
 # Image size ~ 400MB
 FROM node:21-alpine3.18 as builder
 
-WORKDIR /app
 
 RUN corepack enable && corepack prepare pnpm@latest --activate
 ENV PNPM_HOME=/usr/local/bin
-
-COPY . .
+WORKDIR /app
 
 COPY package*.json *-lock.yaml ./
+
+COPY . .
 
 RUN apk add --no-cache --virtual .gyp \
         python3 \
