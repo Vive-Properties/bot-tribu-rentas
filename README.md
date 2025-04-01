@@ -1,44 +1,174 @@
 <p align="center">
-  <a href="https://builderbot.vercel.app/">
-    <picture>
-      <img src="https://builderbot.vercel.app/assets/thumbnail-vector.png" height="80">
-    </picture>
-    <h2 align="center">BuilderBot</h2>
-  </a>
+  <h1 align="center">Bot Tribu Rentas - Asistente Virtual</h1>
 </p>
 
+## 📝 Descripción
 
+Bot de WhatsApp automatizado para Tribu Living que utiliza la API de OpenAI
+(Asistentes) para proporcionar respuestas automáticas e inteligentes a consultas
+de usuarios. El bot está diseñado para manejar preguntas frecuentes y
+proporcionar información relevante sobre servicios de renta y propiedades.
 
-<p align="center">
-  <a aria-label="NPM version" href="https://www.npmjs.com/package/@builderbot/bot">
-    <img alt="" src="https://img.shields.io/npm/v/@builderbot/bot?color=%2300c200&label=%40bot-whatsapp">
-  </a>
-  <a aria-label="Join the community on GitHub" href="https://link.codigoencasa.com/DISCORD">
-    <img alt="" src="https://img.shields.io/discord/915193197645402142?logo=discord">
-  </a>
-</p>
+## 🚀 Características Principales
 
+- Integración con WhatsApp mediante Baileys Provider
+- Utilización de OpenAI Assistants para respuestas contextualizadas
+- Sistema de cola de mensajes para manejo eficiente de conversaciones
+- Finalización automática de conversaciones por inactividad (1 hora)
+- Endpoints REST para gestión de mensajes y usuarios
+- Almacenamiento de datos mediante JSON File Database
 
-## Getting Started
+## 🛠️ Tecnologías Utilizadas
 
-With this library, you can build automated conversation flows agnostic to the WhatsApp provider, set up automated responses for frequently asked questions, receive and respond to messages automatically, and track interactions with customers. Additionally, you can easily set up triggers to expand functionalities limitlessly.
+- Node.js
+- TypeScript
+- @builderbot/bot (Framework principal)
+- OpenAI API (Assistants)
+- Baileys (Proveedor de WhatsApp)
+- JSON File Database
 
+## ⚙️ Requisitos Previos
+
+- Node.js (versión 14 o superior)
+- npm o yarn
+- Cuenta de WhatsApp
+- Cuenta en OpenAI con acceso a API
+
+## 🔧 Configuración
+
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/tu-usuario/bot-tribu-rentas.git
+cd bot-tribu-rentas
 ```
-npm create builderbot@latest
+
+2. Instala las dependencias:
+
+```bash
+npm install
 ```
 
+3. Configura las variables de entorno creando un archivo `.env`:
 
-## Documentation
+```env
+PORT=8080
+OPENAI_API_KEY=tu_api_key_de_openai
+ASSISTANT_ID=id_del_asistente_openai
+```
 
-Visit [builderbot](https://builderbot.vercel.app/) to view the full documentation.
+### ℹ️ Configuración del Asistente OpenAI
 
+El bot utiliza un asistente preconfigurado en OpenAI que contiene:
 
-## Official Course
+- Contexto específico sobre Tribu Living
+- Base de conocimiento sobre preguntas frecuentes
+- Directrices de comportamiento y respuesta
+- Información sobre propiedades y servicios
 
-If you want to discover all the functions and features offered by the library you can take the course.
-[View Course](https://app.codigoencasa.com/courses/builderbot?refCode=LEIFER)
+Para configurar un nuevo asistente:
 
+1. Crear un nuevo asistente en OpenAI
+2. Cargar la base de conocimiento necesaria
+3. Configurar el comportamiento deseado
+4. Copiar el ID del asistente al archivo .env
 
-## Contact Us
-- [💻 Discord](https://link.codigoencasa.com/DISCORD)
-- [👌 𝕏 (Twitter)](https://twitter.com/leifermendez)
+## 🚀 Uso
+
+Para iniciar el bot en modo desarrollo:
+
+```bash
+npm run dev
+```
+
+Para producción:
+
+```bash
+npm run build
+npm start
+```
+
+## 📡 API Endpoints
+
+El bot expone los siguientes endpoints:
+
+### POST /v1/messages
+
+Envía mensajes a usuarios específicos.
+
+```json
+{
+  "number": "5212345678900",
+  "message": "Mensaje a enviar",
+  "urlMedia": "https://url-opcional-media.com"
+}
+```
+
+### POST /v1/register
+
+Registra nuevos usuarios en el sistema.
+
+```json
+{
+  "number": "5212345678900",
+  "name": "Nombre Usuario"
+}
+```
+
+### POST /v1/blacklist
+
+Gestiona la lista negra de usuarios.
+
+```json
+{
+  "number": "5212345678900",
+  "intent": "add" | "remove"
+}
+```
+
+## 🤖 Flujos de Conversación
+
+1. **Flujo de Bienvenida**
+
+   - Activación: Usuario envía "Hola Tribu"
+   - Respuesta inicial de bienvenida
+   - Transición al flujo principal de IA
+
+2. **Flujo Principal**
+   - Procesamiento de mensajes mediante OpenAI Assistant
+   - Respuestas contextualizadas
+   - Gestión de cola de mensajes
+   - Finalización automática después de 1 hora de inactividad
+
+## 🔒 Seguridad
+
+- Las credenciales sensibles se manejan mediante variables de entorno
+- Sistema de cola para prevenir sobrecarga
+- Mecanismo de bloqueo para evitar procesamiento simultáneo
+- Lista negra para gestión de usuarios
+
+## 👥 Contribución
+
+1. Fork el proyecto
+2. Crea tu rama de características (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add: alguna característica asombrosa'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo
+[LICENSE.md](LICENSE.md) para más detalles.
+
+## 📞 Soporte
+
+Para soporte y consultas, por favor contacta a:
+
+- Email: [tu-email@dominio.com]
+- WhatsApp: [número-de-soporte]
+
+## ✨ Agradecimientos
+
+- Equipo de Tribu Living
+- Comunidad de BuilderBot
+- Contribuidores del proyecto
